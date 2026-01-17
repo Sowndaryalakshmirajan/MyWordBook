@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWordBook</title>
+    {%load static%}
+     <link rel="stylesheet" href="{%static 'css/style.css' %}">
+     <link rel="stylesheet" href="{%static 'bootstrap/bootstrap.min.css'%}">
+<body>
+    <nav id="nav-col" class="navbar navbar-expand-lg fixed-top">
+  <div class="container"> <!-- container instead of container-fluid -->
+    <a class="navbar-brand" href="#home">MyWordBook</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'addnewword'%}">Add New Word</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'allwords'%}">All Words</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'allwords'%}">Self-assess</a>
+        </li>
+      </ul>
+
+      <!-- Cambridge link right side -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="https://dictionary.cambridge.org" target="_blank">
+            Cambridge Dictionary
+            <img src="{% static 'images/cambridge.png' %}" alt="Cambridge" class="cam-icon">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home">
+    <div class="home1">
+        <h1>MyWordBook</h1>
+    </div>
+    <div class="home2">
+        <p>This website helps me store new  English words I learn while reading books.
+I save meanings, examples, and images so I don’t forget them.</p>
+<div class="home4">
+  <h1 class="quickadd">QuickAdd</h1>
+<fieldset class="quickadd">
+  <form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Word</label>
+  <input type="text" class="form-control" name="word" id="exampleFormControlInput1" placeholder="EnterNewWord" required>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Meaning</label>
+  <textarea class="form-control" name="meaning" id="exampleFormControlTextarea1" rows="3"required ></textarea>
+</div>
+<div class="quickadd">
+  <input type="submit" class="btn btn-outline-primary" value="save">
+</div>
+  </form>
+</fieldset>  
+</div>
+<div class="container mt-4">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success custom-alert alert-dismissible fade show">
+          {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+    <div class="home3">
+        <button type="button" class="btn btn-outline-primary" id="a" ><a href="#demo">Directives</a></button>
+        
+    
+<button type="button" class="btn btn-outline-primary " id="a"><a href="{% url 'addnewword' %}">Add New Word</a></button>
+<!-- <p>Save a new English word with meaning and image</p> -->
+<button type="button" class="btn btn-outline-primary" id="a"><a href="{% url 'allwords'%}">AllWords</a>
+</button>
+<button type="button" class="btn btn-outline-primary" id="a"><a href="{% url 'allwords'%}">Self-assess</a>
+</button>
+    </div>
+    
+   
+</section>
+<section id="demo">
+    <!-- <h1>MyWordBook</h1> -->
+    h1
+    <div><p><strong style="color: white;">MyWordBook – How to Use (English explanation)</strong>
+
+MyWordBook is a personal web application designed to help users build strong English vocabulary while reading books, articles, or any English content. The website focuses on real reading habits, where users often want to save words quickly without filling long forms. To solve this, MyWordBook provides a Quick Save feature that allows users to instantly store new words with their meanings while reading.
+
+After saving a word, users can later enrich it by adding detailed explanations, example sentences, and images through the “Complete Word” option. This step-by-step approach reduces effort and makes vocabulary learning more natural and effective. All saved words are displayed on the All Words page, where users can easily review and manage their personal word collection.
+
+To improve long-term memory, MyWordBook includes a Memory Booster feature that reminds users to revise previously saved words after a few days. Users can check whether they remember a word or revisit its meaning and examples if needed. In addition, the Reading Log page helps users track their daily reading activities by recording book names, notes, and newly learned words, encouraging consistency and progress.
+
+Overall, MyWordBook acts as a smart digital word notebook that supports quick saving, gradual learning, and regular revision, helping users improve their English vocabulary in a practical and user-friendly way.</p></div>
+
+</section>
+
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

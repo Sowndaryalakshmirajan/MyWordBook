@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWordBook</title>
+     {%load static%}
+     <link rel="stylesheet" href="{%static 'css/style.css' %}">
+     <link rel="stylesheet" href="{%static 'bootstrap/bootstrap.min.css'%}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+{% block content %}
+<!-- <div class="addpage1"> -->
+    <!-- <button type="button" class="btn btn-outline-primary" id="a" ><a href="{% url 'wordmastery'%}">Word Mastery</a></button>   -->
+<!-- </div> -->
+<!-- <div class="addpage1"> -->
+    <!-- <button type="button" class="btn btn-outline-primary" id="a" ><a href="#addnewword">AddNewWord</a></button>   -->
+<!-- </div> -->
+ <div class="card-container">
+  <div class="card custom-card">
+    <img src="{% static 'images/rename.png'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">
+        <strong style="color: white;">WordMaster is a revision tool that helps you remember and master saved words for a long time.</strong>
+      </p>
+      <a href="{% url 'wordmastery'%}" class="btn btn-primary">Let's Go</a>
+    </div>
+  </div>
+
+  <div class="card custom-card">
+    <img src="{% static 'images/new1.png'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">
+        <strong style="color: white;">Save a new word with its meaning, example, and image for future learning.</strong>
+      </p>
+      <a href="{% url 'newword'%}" class="btn btn-primary">Let's Go</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

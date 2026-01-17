@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWordBook</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container mt-4 jj">
+    <h3 class="mb-3">📚 All Saved Words</h3>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Word</th>
+                <th>Meaning</th>
+                <th>Deep Meaning</th>
+                <th>Example</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody class="text-white">
+            {% for w in words %}
+            <tr >
+                <!-- <td>{{ forloop.counter }}</td>
+                <td>{{ w.word }}</td>
+                <td>{{ w.meaning }}</td>
+                <td>{{ w.deep_meaning }}</td>
+                <td>{{ w.example }}</td> -->
+                <td style="color: white;">{{ forloop.counter }}</td>
+<td style="color: white;">{{ w.word }}</td>
+<td style="color: white;">{{ w.meaning }}</td>
+<td style="color: white;">{{ w.deep_meaning }}</td>
+<td style="color: white;">{{ w.example }}</td>
+
+
+                <!-- IMAGE COLUMN -->
+                <td>
+                    {% if w.image %}
+                        <img src="{{ w.image }}"
+                             width="80"
+                             style="cursor:pointer"
+                             data-bs-toggle="modal"
+                             data-bs-target="#imgModal{{ forloop.counter }}">
+                    {% else %}
+                        ❌
+                    {% endif %}
+                </td>
+            </tr>
+
+            <!-- 🔥 IMAGE MODAL -->
+            {% if w.image %}
+            <div class="modal fade" id="imgModal{{ forloop.counter }}" tabindex="-1">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">{{ w.word }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="{{ w.image }}" class="img-fluid rounded">
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No words saved</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

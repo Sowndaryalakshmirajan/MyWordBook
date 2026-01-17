@@ -1,0 +1,209 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Trad+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #0F172A !important;
+     padding-top: 60px !important   ;
+}
+#nav-col{
+    background-color: #020617 ;
+
+}
+.nav-item  a{
+    color: #38BDF8 !important;
+    font-family: 'Playfair Display', serif;
+}
+#nav-col .navbar-brand{
+    color: #E5E7EB;
+     /* font-family: 'Bangers', cursive; */
+     font-family: 'Lora', serif;
+}
+#nav-col .dropdown-menu{
+    background-color:#75B06F ;
+}
+
+    /* font-family: 'Bangers', cursive; */
+    /* font-family: 'Playfair Display', serif; */
+    /* font-family: 'Lora', serif; */
+
+.home1 h1{
+     font-family: 'Lora', serif;
+      color:white;
+       display: flex;
+    justify-content: center;
+    padding: 30px;
+
+}
+.home2 p{
+    font-family: 'Lora', serif;
+      color:white;
+       display: flex;
+    justify-content: center;
+    font-size: larger;
+}
+.home4 .quickadd {
+     font-family: 'Lora', serif;
+     color: white !important;
+    padding: 10px;
+    /* width: 300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 10v; */
+
+
+}
+.quickadd input{
+       color: white !important;
+}
+.quickadd textarea{
+       color: white !important;
+}
+
+.home3{
+    font-family: 'Lora', serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+
+}
+#a a {
+    color: inherit;          /* normal time la button color follow pannum */
+    text-decoration: none;
+}
+
+/* click pannumbodhu */
+#a:active a,
+#a:focus a {
+    color: white !important;
+}
+#demo {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    padding-top: 200px;
+    padding-bottom: 50px;
+    font-size: large;
+}
+
+.cam-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+
+
+#demo div {
+    max-width: 800px;          /* content width control */
+}
+
+#demo p {
+    text-align: justify;       /* paragraph alignment */
+    color: white;
+    line-height: 1.7;
+}
+.AddNewWord{
+     font-family: 'Lora', serif;
+     color: white;
+       display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+
+}
+/* .addpage1{
+    font-family: 'Lora', serif;
+     color: white;
+       display: flex;
+    justify-content: center;
+    padding: 100px;
+    /* gap: 20px; */
+
+ /* */ 
+ .card-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;              /* space between cards */
+    margin-top: 40px;
+     padding-top: 40px;
+}
+
+.custom-card{
+    /* width: 18rem; */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(6px);        
+    /* border: none; */
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.25); */
+    /* transition: transform 0.3s ease; */
+
+    width: 18rem;
+    background-color: transparent !important; /* IMPORTANT */
+    border: none;
+    /* box-shadow: #38BDF8 ; */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+   
+
+}
+.card-text{
+     font-family: 'Lora', serif;
+    gap:10px ;
+}
+
+
+
+.custom-card:hover{
+    transform: translateY(-8px);
+}
+.word-form{
+    padding-top: 40px;
+    max-width: 300px;
+    margin: auto;
+    color:white;
+     font-family: 'Lora', serif;
+     
+}
+.word-form .form-control{
+    color: white !important;
+}
+
+.form-control{
+     box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+        background-color: transparent !important; /* IMPORTANT */
+      
+    
+}
+/* Transparent + glass effect alert */
+.custom-alert {
+    background-color: #0F172A !important; /* transparent black */
+    color: #ffffff !important;                /* white text */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); */
+     box-shadow: 0 8px 25px #38BDF8;   
+    font-weight: 500;
+}
+
+/* Close button white */
+.custom-alert .btn-close {
+    filter: invert(1);
+    opacity: 0.9;
+}
+.jj{
+    color: white;
+      font-family: 'Lora', serif;
+}
+.table tbody td {
+    font-weight: 500;
+}
+.table tbody td {
+    color: #ffffff;
+}
+.text-white {
+    color: #ffffff !important;
+}

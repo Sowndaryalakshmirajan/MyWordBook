@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {%load static%}
+     <link rel="stylesheet" href="{%static 'css/style.css' %}">
+     <link rel="stylesheet" href="{%static 'bootstrap/bootstrap.min.css'%}">
+</head>
+<body>
+{% include 'navbar.html' %}
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="word-form" autocomplete="off">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Word</label>
+        <input type="text" name="word" class="form-control" placeholder="Enter word" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Meaning</label>
+        <input type="text" name="meaning" class="form-control" placeholder="Short meaning" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Deep Meaning</label>
+        <textarea name="deep_meaning" class="form-control" rows="3"
+                  placeholder="Explain the word in detail"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Example Sentence</label>
+        <textarea name="example" class="form-control" rows="2"
+                  placeholder="Use the word in a sentence"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input type="file" name="image" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Save Word</button>
+</form>
+
+{% endblock %}
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>    
+</body>
+</html>
